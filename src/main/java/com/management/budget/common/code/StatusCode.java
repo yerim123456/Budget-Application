@@ -12,6 +12,7 @@ public enum StatusCode {
 	 **/
 	OK(HttpStatus.OK, "요청이 성공했습니다."),
 	CREATED(HttpStatus.CREATED, "생성되었습니다."),
+	SIGN_UP_ACCEPTED(HttpStatus.ACCEPTED, "회원가입이 완료되었습니다."),
 
 	/**
 	 * 400 번대 CODE
@@ -27,6 +28,17 @@ public enum StatusCode {
 	USER_NOT_FOUND(HttpStatus.NOT_FOUND, "요청된 사용자를 찾을 수 없습니다."),
 	UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "인증 오류가 발생했습니다."),
 	FORBIDDEN(HttpStatus.FORBIDDEN, "접근 권한이 없습니다."),
+
+	// 카테고리
+	CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "요청된 카테고리를 찾을 수 없습니다."),
+
+	// 예산
+	INVALID_BUDGET_TYPE(HttpStatus.BAD_REQUEST, "해당하는 예산 설정 타입은 없습니다."),
+	BUDGET_TYPE_CATEGORY_NEED_CATEGORY_ID(HttpStatus.BAD_REQUEST, "CATEGORY 타입은 categoryId가 필요합니다."),
+	BUDGET_TYPE_CATEGORY_DONT_NEED_AT(HttpStatus.BAD_REQUEST, "CATEGORY 타입은 날짜(at)를 포함하지 않아야 합니다."),
+	INVALID_BUDGET_TYPE_DATE(HttpStatus.BAD_REQUEST, "YEAR, MONTH 타입의 날짜 형식에 맞게 요청해주셔야 합니다."),
+	BUDGET_TYPE_DATE_NEED_AT(HttpStatus.BAD_REQUEST, "YEAR, MONTH 타입은 날짜(at)가 필요합니다."),
+	BUDGET_TYPE_DATE_DONT_NEED_CATEGORY_ID(HttpStatus.BAD_REQUEST, "YEAR, MONTH 타입은 categoryId를 포함하지 않아야 합니다."),
 
 	/**
 	 * 500 번대 CODE
