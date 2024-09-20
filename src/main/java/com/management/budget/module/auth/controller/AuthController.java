@@ -4,7 +4,7 @@ import com.management.budget.common.BaseApiResponse;
 import com.management.budget.module.auth.dto.JwtResponse;
 import com.management.budget.module.auth.dto.LoginRequest;
 import com.management.budget.module.auth.jwt.JwtManager;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,13 +18,14 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/auth")
 public class AuthController implements AuthControllerDocs {
 
-	private final AuthenticationManager authenticationManager;
+	@Autowired
+	private AuthenticationManager authenticationManager;
 
-	private final JwtManager jwtManager;
+	@Autowired
+	private JwtManager jwtManager;
 
 	@PostMapping("/login")
 	public BaseApiResponse<JwtResponse> login(@RequestBody LoginRequest loginRequest) {
