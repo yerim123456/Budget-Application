@@ -40,6 +40,10 @@ public enum StatusCode {
 	BUDGET_TYPE_DATE_NEED_AT(HttpStatus.BAD_REQUEST, "YEAR, MONTH 타입은 날짜(at)가 필요합니다."),
 	BUDGET_TYPE_DATE_DONT_NEED_CATEGORY_ID(HttpStatus.BAD_REQUEST, "YEAR, MONTH 타입은 categoryId를 포함하지 않아야 합니다."),
 
+
+	// 지출
+	SPENDING_NOT_FOUND(HttpStatus.NOT_FOUND, "요청된 지출 내역을 찾을 수 없습니다."),
+
 	/**
 	 * 500 번대 CODE
 	 **/
